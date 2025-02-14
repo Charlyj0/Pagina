@@ -181,6 +181,14 @@ p {
     margin-bottom: 10px; /* Espaciado entre las imágenes y el texto */
 }
 
+.project p {
+    max-width: 80%; /* Limita el ancho del párrafo */
+    margin: 10px auto; /* Centra el párrafo debajo de las imágenes */
+    font-size: 14px;
+    color: gray;
+    text-align: justify;
+}
+
 /* Modal de imagen expandida */
 .modal {
     display: none;
