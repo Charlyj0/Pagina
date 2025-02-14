@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Carlos Jimenez</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#inicio" class="btn">Inicio</a>
+            <a href="#proyectos" class="btn">Mis Proyectos</a>
+        </div>
+    </header>
+
+    <section id="inicio">
+    <div class="container">
+        <div class="left">
+            <h1 class="logo">CJ</h1>
+            <img src="kiriko.jpg" alt="Foto de Carlos Jimenez" class="profile-img">
+            <div class="contact-info">
+                <p><strong>E-mail: </strong> chgarlyy0@gmail.com</p>
+                <p><strong>Teléfono: </strong>9983479071</p>
+                <div class="social-icons">
+                    <a href="#">FB</a>
+                    <a href="#">IG</a>
+                    <a href="#">X</a>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <h2>CARLOS <br> JIMENEZ</h2>
+            <p> Soy estudiante universitario de la carrera
+                de ingenieria en software, cuento con
+                experiencia en tecnologías como React,
+                C#, C++ y conocimientos básicos en
+                Java. Además, tengo nociones de diseño
+                UI/UX, lo que me permite crear
+                interfaces funcionales y atractivas. Me
+                interesa aprender constantemente y
+                aplicar mis habilidades en proyectos que
+                impulsen mi crecimiento profesional</p>
+            <br>
+            <a href="Carlos-Jimenez CV.pdf" class="btn" download>DESCARGAR CV</a>
+        </div>
+    </div>
+
+    <!--<div class="divider"></div>-->
+    </section>
+
+    <section id="proyectos" class="projects-section">
+        <h2>MIS PROYECTOS</h2>
+    <div class="project">
+         <!-- Proyecto 1 -->
+            <h3 class="project-title">Veterinaria</h3>
+            <div class="images-container">
+                <img src="img/vet.png" alt="Proyecto 1 - Imagen 1" class="expandable">
+                <img src="img/vet2.png" alt="Proyecto 1 - Imagen 2" class="expandable">
+            </div>
+            <p>@Veterinaria</p>
+            <p>Creación de pagina web para una veterinaria, maneja apartados de agendar cita y compras de productos</p>
+        </div>
+    </div>
+
+        <!-- Proyecto 2 -->
+        <div class="project">
+            <h3 class="project-title">Novela</h3>
+            <div class="images-container">
+                <img src="img/Nov.png" alt="Proyecto 2 - Imagen 1" class="expandable">
+                <img src="img/Nov2.png" alt="Proyecto 2 - Imagen 2" class="expandable">
+            </div>
+            <p>@Novela</p>
+            <p>Desarrollo de un pequeño juego de preguntas y respuestas, donde interactuas mediante dialogos</p>
+        </div>
+
+        <!-- Proyecto 3 -->
+        <div class="project">
+            <h3 class="project-title">ChatBot</h3>
+            <div class="images-container">
+                <img src="img/ia.png" alt="Proyecto 3 - Imagen 1" class="expandable">
+                <img src="img/ia2.png" alt="Proyecto 3 - Imagen 2" class="expandable">
+            </div>
+            <p>@pChatBot</p>
+            <p>Desarrollo de un asistente virtual que funcione con la API de Gemini, la IA de Google</p>
+        </div>
+    </section>
+
+   <!-- Modal para imagen expandida -->
+   <div id="imageModal" class="modal">
+    <span id="closeBtn" class="close">&times;</span>
+    <img id="expandedImg" src="" alt="Imagen expandida">
+</div>
+
+    <!-- JavaScript -->
+    <script>
+        // Función para expandir la imagen
+        const images = document.querySelectorAll('.expandable');
+        const modal = document.getElementById('imageModal');
+        const expandedImg = document.getElementById('expandedImg');
+        const closeBtn = document.getElementById('closeBtn');
+
+        images.forEach(image => {
+            image.addEventListener('click', function() {
+                modal.style.display = 'block';
+                expandedImg.src = this.src;
+            });
+        });
+
+        // Función para cerrar la imagen expandida
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // Cerrar la imagen cuando se haga clic fuera de ella
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Desplazamiento suave para los enlaces
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+<!-- Footer -->
+<footer>
+    <p class="footer-text">Derechos reservados SA DE CV 2024-2025</p>
+</footer>
+
+<!-- Estilo CSS para el footer -->
+<style>
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .footer-text {
+        font-size: 14px;
+        margin: 0;
+    }
+</style>
+
+</html>
